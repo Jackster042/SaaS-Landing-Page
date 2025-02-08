@@ -12,15 +12,18 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 w-full z-50 py-10">
+      {/* <Container> */}
       <div className="container flex h-14 items-center max-lg:px-5">
+        {/* Logo */}
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/xora.svg" alt="app logo" width={115} height={55} />
         </a>
 
+        {/* Sidebar */}
         <div
           className={clsx(
             "w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0",
-            isOpen ? "max-lg:opacity-100" : "pointer-events-none"
+            isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
           )}
         >
           <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden sidebar-before max-md:px-4">
@@ -57,6 +60,8 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
+
+            {/* Background Images */}
             <div className="lg:hidden block absolute top-1/2 left-0 w-[960px] h-[380px] translate-x-[-290px] -translate-y-1/2 rotate-90">
               <img
                 src="/images/bg-outlines.svg"
@@ -77,6 +82,7 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Hamburger Navbar */}
         <button
           className="lg:hidden z-2 border-2 size-10 rounded-full border-s4/25 flex justify-center items-center"
           onClick={() => setIsOpen((prevState) => !prevState)}
